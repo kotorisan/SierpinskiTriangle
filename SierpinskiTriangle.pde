@@ -1,24 +1,27 @@
 public int ilya = 20;
+PImage ayesha;
 public void setup()
 {
 	size(600, 600);
+	ayesha = loadImage("atelier_ayesha.png");
 }
 public void draw()
 {
-	background(0,0,255);
-	sierpinski(0,600,600);
+	background(ayesha);
+	sierpinski(0, 600, 600);
 }
 public void mouseWheel(MouseEvent umi) //optional
 {
-	if (umi.getCount() < 40)
-	{
-		ilya += umi.getCount();
-	}
+	ilya += umi.getCount();
 }
 public void sierpinski(int x, int y, int len) 
 {
-	fill(255,0,0);
-	if (len > ilya)
+	fill(255,0,0,90);
+	if (ilya < 5)
+	{
+		ilya = 5;
+	}
+	if (len >= ilya)
 	{
 		sierpinski(x,y,len/2);
 		sierpinski(x+len/2, y, len/2);
