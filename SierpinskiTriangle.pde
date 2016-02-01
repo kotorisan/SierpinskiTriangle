@@ -7,7 +7,7 @@ public void setup()
 }
 public void draw()
 {
-	background(ayesha);
+	image(ayesha, 0, 0, 600, 600);
 	sierpinski(0, 600, 600);
 }
 public void mouseWheel(MouseEvent umi) //optional
